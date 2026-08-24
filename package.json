@@ -1,0 +1,24 @@
+{
+  "name": "forbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauraton/forbook.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lauraton/forbook/issues"
+  },
+  "homepage": "https://github.com/lauraton/forbook#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.24.2",
+    "sequelize": "^6.37.8"
+  }
+}
