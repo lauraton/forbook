@@ -1,0 +1,9 @@
+import { DataTypes } from "sequelize";
+import sequelize from "../config/database.js"
+
+export const rolesModel = sequelize.define("Roles",{
+    name: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    }
+})
