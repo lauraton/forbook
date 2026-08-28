@@ -1,5 +1,5 @@
 
-import { rolesModel } from "../models/roles.model";
+import { rolesModel } from "../models/roles.model.js";
 
 export const obtenerTodosLosRoles = async (req, res) => {
     try{
@@ -26,7 +26,7 @@ export const ObtenerRolPorId = async (req, res) => {
         })
     }
 }
-export const CrearRol = async (req, res) => {
+export const crearRol = async (req, res) => {
     try {
         const{name} = req.body;
         const NombreBuscado = await rolesModel.findOne({
