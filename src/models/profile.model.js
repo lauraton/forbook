@@ -1,7 +1,8 @@
+import { sequelize } from "../config/database.js"
 import { DataTypes } from "sequelize";
-import baseDatos from "../config/database.js";
 
-const ProfileModel = baseDatos.define("Profile", {
+
+export const ProfileModel = sequelize.define("Profile", {
   bio: {
     type: DataTypes.STRING(255),
     allowNull: true,
@@ -19,5 +20,3 @@ const ProfileModel = baseDatos.define("Profile", {
     allowNull: true,
   },
 });
-
-export { ProfileModel };

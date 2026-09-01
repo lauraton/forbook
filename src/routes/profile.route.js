@@ -1,10 +1,8 @@
 import { Router } from "express";
 import { createProfile, getProfiles } from "../controllers/profile.controller.js";
-import { profileValidationRules } from "../middlewares/profile.validator.js";
+import { profileValidationRules } from "../middlewares/validations/profile.validation.js"
 
-const router = Router();
+export const profileRouter = Router();
 
-router.get("/", getProfiles);
-router.post("/", profileValidationRules, createProfile);
-
-export default router;
+profileRouter.get("/profiles", getProfiles);
+profileRouter.post("/profiles", profileValidationRules, createProfile);

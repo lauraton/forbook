@@ -1,4 +1,3 @@
-
 import { rolesModel } from "../models/roles.model.js";
 
 export const obtenerTodosLosRoles = async (req, res) => {
