@@ -1,5 +1,5 @@
-import { sequelize } from "../config/database";
-import { User } from "../models/user.model";
+import { sequelize } from "../config/database.js";
+import { User } from "../models/user.model.js";
 
 
 export const createUser = async (req, res) => {

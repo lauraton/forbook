@@ -30,4 +30,9 @@ export const User = sequelize.define("User", {
         unique: true
 
     }
-})
+},
+{
+    timestamps: true,
+    paranoid: true
+}
+)

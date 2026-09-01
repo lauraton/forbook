@@ -5,8 +5,7 @@ import {
 
 import { validate, CrearRolvalidations } from "../middlewares/roles.validation.js"
 
-const router = express.Router();
+export const rolesRouter = express.Router();
 
-router.post("/", CrearRolvalidations, validate, crearRol)
+rolesRouter.post("/roles", CrearRolvalidations, validate, crearRol)
 
-export default router
