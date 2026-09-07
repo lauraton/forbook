@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/lauraton/forbook#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "express-validator": "^7.3.2",
+    "leaflet": "^1.9.4",
     "mysql2": "^3.24.2",
     "sequelize": "^6.37.8"
   }

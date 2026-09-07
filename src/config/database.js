@@ -9,7 +9,7 @@ export const sequelize = new Sequelize('forbook', 'root', '', {
 export const startDB = async () => {
     try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true })
+    await sequelize.sync({ force: false })
     console.log("base de datos inciada correctamente");
 } catch (error) {
     console.error("Error en la base de datos:", error)

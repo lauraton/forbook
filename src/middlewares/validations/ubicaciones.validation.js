@@ -7,10 +7,10 @@ export const CrearUbicacionvalidations = [
         .withMessage("El nombre no puede estar vacio")
         .isString()
         .withMessage("El nombre debe de ser tipo string")
-        .isLength({max: 20})
-        .withMessage("El nombre no puede ser mas de 20 caracteres")
-        .isLength({min: 2})
-        .withMessage("El nombre no puede tener menos de 2 caracteres")
+        .isLength({max: 80})
+        .withMessage("El nombre no puede ser mas de 80 caracteres")
+        .isLength({min: 5})
+        .withMessage("El nombre no puede tener menos de 5 caracteres")
         .custom(async (name) => {
             const ubicaciones = await UbicacionesModel.findOne({where: {name}})
 

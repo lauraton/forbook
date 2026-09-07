@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Paradas del Instituto Politecnico</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Paradas del Instituto Politecnico</h1>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      const map = L.map("map").setView([-26.080175, -58.277211], 13);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      fetch("http://localhost:3000/api/ubicaciones")
+        .then((res) => res.json())
+        .then((ubicaciones) => {
+          ubicaciones.forEach((ubicacion) => {
+            L.marker([ubicacion.latitud, ubicacion.longitud])
+              .addTo(map)
+              .bindPopup(ubicacion.name);
+          });
+        })
+        .catch((error) => {
+          console.error("Error obteniendo ubicaciones:", error);
+        });
+    </script>
+  </body>
+</html>
