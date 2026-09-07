@@ -1,5 +1,5 @@
 import { body, validationResult } from "express-validator"
-import { rolesModel } from "../models/roles.model.js"
+import { rolesModel } from "../../models/roles.model.js"
 
 export const CrearRolvalidations = [
     body("name")

@@ -1,5 +1,5 @@
 import { body, validationResult } from "express-validator"
-import { UbicacionesModel } from "../models/ubicaciones.model.js"
+import { UbicacionesModel } from "../../models/ubicaciones.model.js"
 
 export const CrearUbicacionvalidations = [
     body("name")

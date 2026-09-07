@@ -3,7 +3,7 @@ import {
     crearRol
 } from "../controllers/roles.controller.js"
 
-import { validate, CrearRolvalidations } from "../middlewares/roles.validation.js"
+import { validate, CrearRolvalidations } from "../middlewares/validations/roles.validation.js"
 
 export const rolesRouter = express.Router();
 
