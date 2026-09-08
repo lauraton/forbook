@@ -24,7 +24,7 @@ export const userValidation = [
         .withMessage("El email debe de ser un email válido")
         .custom(async (email) => {
             const existingMail = await User.findOne({
-                 where: { email }
+                where: { email }
             });
 
             if (existingMail) {

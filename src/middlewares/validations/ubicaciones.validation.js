@@ -28,7 +28,17 @@ export const CrearUbicacionvalidations = [
             .notEmpty()
             .withMessage("La longitud no puede estar vacia")
             .isFloat()
-            .withMessage("La longitud tiene que ser un numero decimal ")
+            .withMessage("La longitud tiene que ser un numero decimal "),
+        body("categoria_id")
+            .notEmpty()
+            .withMessage("La categoria no puede estar vacia")
+            .isInt({min: 1})
+            .withMessage("El id de categoria debe de ser de un digito y ser de tipo numero"),
+        body("subcategoria_id")
+            .notEmpty()
+            .withMessage("La id de subcategoria no puede estar vacia")
+            .isInt({min: 1})
+            .withMessage("El id de subcategoria debe de ser de un digito y ser de tipo numero")
     ]
 
 export const validate = (req, res, next) => {

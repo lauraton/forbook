@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
 export const sequelize = new Sequelize('forbook', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
+    host: 'localhost',
+    dialect: 'mysql',
     logging: false
 });
 
