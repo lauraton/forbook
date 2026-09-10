@@ -8,8 +8,8 @@ export const CrearSubCategoriavalidations = [
         .withMessage("El nombre no puede estar vacio")
         .isString()
         .withMessage("El nombre debe de ser tipo string")
-        .isLength({max: 20})
-        .withMessage("El nombre no puede ser mas de 20 caracteres")
+        .isLength({max: 50})
+        .withMessage("El nombre no puede ser mas de 50 caracteres")
         .isLength({min: 2})
         .withMessage("El nombre no puede tener menos de 2 caracteres")
         .custom(async (name) => {
