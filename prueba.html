@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
   <head>
@@ -33,11 +34,29 @@
         attribution: "&copy; OpenStreetMap contributors",
       }).addTo(map);
 
+      // Ícono para Hospital
+      const hospitalIcon = L.icon({
+        iconUrl: "http://localhost:3000/css/img/Hospital/Hospitales.jpg",
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40],
+      });
+
       fetch("http://localhost:3000/api/ubicaciones")
         .then((res) => res.json())
         .then((ubicaciones) => {
           ubicaciones.forEach((ubicacion) => {
-            L.marker([ubicacion.latitud, ubicacion.longitud])
+            // Por defecto no usamos ningún ícono personalizado
+            let icono = undefined;
+
+            // Subcategoría 1 = Hospital
+            if (ubicacion.subcategoria_id === 1) {
+              icono = hospitalIcon;
+            }
+
+            L.marker([ubicacion.latitud, ubicacion.longitud], {
+              icon: icono,
+            })
               .addTo(map)
               .bindPopup(ubicacion.name);
           });
@@ -48,3 +67,4 @@
     </script>
   </body>
 </html>
+```
