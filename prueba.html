@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="es">
   <head>
@@ -36,10 +35,39 @@
 
       // Ícono para Hospital
       const hospitalIcon = L.icon({
-        iconUrl: "http://localhost:3000/css/img/Hospital/Hospitales.jpg",
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40],
+        iconUrl: "http://localhost:3000/css/img/Hospital/Hospitales.png",
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
+      });
+
+      // Ícono para Centro de Salud
+      const centroDeSaludIcon = L.icon({
+        iconUrl: "http://localhost:3000/css/img/Hospital/CentroDeSalud.png",
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
+      });
+      const centroOdontologicoIcon = L.icon({
+        iconUrl:
+          "http://localhost:3000/css/img/Hospital/CentroOdontologico.png",
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
+      });
+
+      const ColectivoLIcon = L.icon({
+        iconUrl: "http://localhost:3000/css/img/Colectivos/ColectivoL.png",
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
+      });
+
+      const ColectivoFIcon = L.icon({
+        iconUrl: "http://localhost:3000/css/img/Colectivos/ColectivoF.png",
+        iconSize: [64, 64],
+        iconAnchor: [32, 64],
+        popupAnchor: [0, -64],
       });
 
       fetch("http://localhost:3000/api/ubicaciones")
@@ -50,8 +78,28 @@
             let icono = undefined;
 
             // Subcategoría 1 = Hospital
-            if (ubicacion.subcategoria_id === 1) {
+            if (Number(ubicacion.subcategoria_id) === 1) {
               icono = hospitalIcon;
+            }
+
+            // Subcategoría 2 = Centro de Salud
+            if (Number(ubicacion.subcategoria_id) === 2) {
+              icono = centroDeSaludIcon;
+            }
+
+            // Subcategoría 3 = Centro Odontológico
+            if (Number(ubicacion.subcategoria_id) === 3) {
+              icono = centroOdontologicoIcon;
+            }
+
+            // Subcategoría 4 = Colectivo Linea L
+            if (Number(ubicacion.subcategoria_id) === 4) {
+              icono = ColectivoLIcon;
+            }
+
+            // Subcategoría 5 = Colectivo Linea F
+            if (Number(ubicacion.subcategoria_id) === 5) {
+              icono = ColectivoFIcon;
             }
 
             L.marker([ubicacion.latitud, ubicacion.longitud], {
@@ -67,4 +115,3 @@
     </script>
   </body>
 </html>
-```
