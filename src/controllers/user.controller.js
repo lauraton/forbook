@@ -27,7 +27,7 @@ export const userUpdate= async (req, res) => {
          return res.status(404).json({message: "Usuario no encontrado"})
     }
 
-        await User.update(validatedData)
+        await userBuscar.update(validatedData)
         return res.status(200).json({message: "Usuario actualizado correctamente"})
     } catch (error) {
         console.log(error)
